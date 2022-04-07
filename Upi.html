@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Payment</title>
+    <style>
+                 
+        }
+        .question {
+            background: #e2e2e2;
+            padding: 6px;
+            margin-bottom: 13px;
+        }
+        .question p:first-child  {
+            font-weight: bold;
+        }
+        .group {
+            padding: 10px;
+        }
+        
+        .sidetext {
+            float: centre;
+            margin-right: 26px;
+            font-size: 29px;
+            width: 200px;
+            color: #000000;
+            margin-top: 8px;
+        
+        }
+        
+        input {
+            font-size: 26px;
+            padding: 7px;
+            width: 300px;
+        
+        }
+    </style>
+</head>
+<body>
+<center><h1>All UPI Accept</h1></center>
+<div>
+    <p hidden><div class="group">
+   <p hidden>  <div class="sidetext"></div>
+  <p hidden> <input id="buttontext" type="text" value="Pay using UPI">
+
+
+
+<center><img src="https://i.ibb.co/rQG8Dsy/upi-official.png" height="110"></center>
+
+    </div>
+    <div class="group">
+        <div class="sidetext">Email</div>
+        <input id="vpaname" type="text" placeholder="Email">
+    </div>
+    <div class="group">
+        <div class="sidetext">Amount &#8377;</div>
+        <input id="vpa" type="number" placeholder="Enter Amount">
+    </div>
+</div>
+
+
+
+
+<p>
+<center><a href=" " id="__UPI_BUTTON__" style="background: #06d136;border: 2px solid #000000;padding: 10px;text-decoration: none;color: white;font-size: larger;border-radius: 10px;">Pay Using UPI</a></div>
+
+
+
+<script>
+    
+    function htmlEntities(str) {
+      return String(str).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function generateFullCode() {
+      var buttontext = document.getElementById("buttontext").value;
+      var vpa = document.getElementById("vpa").value;
+      var vpaname = document.getElementById("vpaname").value.toUpperCase();
+      var url = "upi://pay?mode=02&pa=Q42050374@ybl&purpose=00&mc=0000&pn=Payment&am="+ vpa +"&tn="+ vpaname +"&orgid=180001&sign=MEUCIDnqTtC6DYRD+eLKlcNoeOfOnSm0F1ANxKO0jeABPIhZAiEAm7XpffuF03pWVKb2sOZL8O8cxlWDDZJePU0Zsq5+T1o=";
+
+      var abutton = document.getElementById("__UPI_BUTTON__");
+      abutton.setAttribute("href", url);
+      abutton.innerText = buttontext;
+
+      var code = document.getElementById("render").innerHTML;
+      document.getElementById("generated").innerHTML = htmlEntities(code);
+    }
+
+    document.getElementById("buttontext").addEventListener('keyup', function() {
+      generateFullCode();
+    });
+    document.getElementById("vpa").addEventListener('keyup', function() {
+      generateFullCode();
+    });
+    document.getElementById("vpaname").addEventListener('keyup', function() {
+      generateFullCode();
+    });
+    generateFullCode();
+</script>
+<p>
+</br>
+<center><b>Secure and instant payments powered by</b>
+<br><br>
+<img height="36px" src="https://telegra.ph/file/03c4581ebd2a0e21972de.png">
+<img height="36px" src="https://telegra.ph/file/e290ab4d1dbf1ae1dab10.png">
+</center></div>
+</body>
+</html>
